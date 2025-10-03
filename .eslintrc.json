@@ -1,0 +1,47 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+
+  "plugins": ["prettier", "import", "unused-imports"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  // el ignorePatterns es para que no aplique las reglas a los archivos que estan en el array
+  "ignorePatterns": [
+    "node_modules/",
+    ".next/",
+    "next.config.js",
+    "webpack.js",
+    "src/app/"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-unreachable": "error",
+    "comma-dangle": "off",
+    "prefer-const": "off",
+    "unused-imports/no-unused-imports": "error",
+    "quotes": [1, "single"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "": "never",
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
+}
