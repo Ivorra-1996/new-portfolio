@@ -5,3 +5,6 @@ Cosas para hacer.
    - hace falta integrar los colores y tipografías del design-system.
    - Quizás alguna animación cuando encimas el cursor sobre una opción a elegir.
    - Agregar una animación que siga el movimiento del mouse.
+
+2. Funciones
+   - cuando click en las opciones te lleva al contenido de la pagina
