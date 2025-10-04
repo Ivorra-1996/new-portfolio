@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import EyeSauron from './EyeSauron';
+import EyeSauron from '../../SVGImages/Logo/EyeSauron';
 import style from './Navbar.module.css';
 
 const Navbar: React.FC = () => {
