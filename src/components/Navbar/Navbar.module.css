@@ -1,18 +1,27 @@
-.navbar {
+.navbarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: auto;
     background-color: #000000;
+    border-bottom: 1px solid rgba(207, 207, 207, 0.308);
+    line-height: 1; 
+}
+
+.descriptionContainer {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(207, 207, 207, 0.308);
-    line-height: 1; /* elimina el espacio vertical extra */
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 20px;
 }
 
 .icon_title {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 0 20px;
     width: 450px;
 }
 
@@ -27,7 +36,6 @@
     display: flex;
     align-items: center;
     gap: 30px;
-    padding: 0 20px;
 }
 
 .options p {
