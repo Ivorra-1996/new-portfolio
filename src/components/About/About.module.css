@@ -1,0 +1,28 @@
+.aboutContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.486);
+    margin-left: 80px;
+}
+
+.title {
+    width: 100%;
+}
+
+.title h2 {
+    color: #D0D0D0;
+    font-family: 'Cinzel Decorative';
+    font-size: 33px;
+    font-weight: bold;
+}
+
+.text {
+    color: #D0D0D0;
+    font-family: 'Cormorant Garamond';
+    font-size: 24px;
+    font-weight: lighter;
+}
+
