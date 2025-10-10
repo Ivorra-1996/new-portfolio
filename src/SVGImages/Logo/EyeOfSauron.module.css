@@ -1,0 +1,16 @@
+.eye_container {
+  width: 100%;
+  height: 100%;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eye_container canvas {
+  width: 140px !important;
+  height: auto !important;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: rgba(216, 115, 57, 0.603);
+}
