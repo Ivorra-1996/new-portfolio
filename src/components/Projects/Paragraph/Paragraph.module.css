@@ -1,0 +1,60 @@
+.filterListContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    /* padding: 0 20px; */
+}
+
+.filterList {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los botones bajen al siguiente renglón */
+    justify-content: center;
+    width: 100%;
+}
+
+.filterList p {
+    display: flex;
+    align-items: center;
+    height: auto;
+    background-color: transparent;
+    color: #D0D0D0;
+    font-size: 24px !important;
+    margin: 0px 0px 12px 0px;
+}
+
+.filterList p:hover {
+    cursor: pointer;
+}
+
+.filterList p.active {
+    color: #FF6600;
+}
+
+@media (max-width: 320px) {
+    .filterList p {
+        font-size: 14px;
+        padding: 5px 8px;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 450px) {
+    .filterList p {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 768px) {
+    .filterList p {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+}
+
+@media (min-width: 769px) {
+    .filterList p {
+        font-size: 20px;
+        padding: 0px 20px;
+    }
+}
