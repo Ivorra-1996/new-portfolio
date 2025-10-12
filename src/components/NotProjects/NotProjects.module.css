@@ -1,0 +1,10 @@
+.notProjectsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notProjectsContainer img {
+    width: 880px;
+    height: auto;
+}

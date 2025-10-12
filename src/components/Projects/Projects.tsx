@@ -3,9 +3,10 @@ import { useState } from 'react';
 import proyectos from '../../../projects/Projects';
 // import { NotProjects } from './components/NotProjects';
 import { FaRegEye } from 'react-icons/fa';
-import { Paragraph } from './/Paragraph/index';
-import { Images } from './Image';
+import { Paragraph } from './components/Paragraph/index';
+import { Images } from './components/Image';
 import style from './Projects.module.css';
+import { NotProjects } from '../NotProjects';
 
 const Projects = () => {
   const [currentCategory, setCategory] = useState('Todo');
@@ -53,8 +54,7 @@ const Projects = () => {
               ))}
             </div>
           ) : (
-            // <NotProjects />
-            <p>no hay proyectos</p>
+            <NotProjects />
           )}
           <hr />
         </div>
