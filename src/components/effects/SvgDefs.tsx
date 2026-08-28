@@ -7,11 +7,6 @@ export default function SvgDefs() {
           <stop offset="60%" stopColor="#d9c79a" />
           <stop offset="100%" stopColor="#9c8558" />
         </radialGradient>
-        <linearGradient id="ringBgGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#d9c79a" />
-          <stop offset="50%" stopColor="#8a7247" />
-          <stop offset="100%" stopColor="#4a3d24" />
-        </linearGradient>
       </defs>
     </svg>
   );

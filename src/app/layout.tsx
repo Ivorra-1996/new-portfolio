@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import SvgDefs from '@/components/effects/SvgDefs';
-import RingBackground from '@/components/effects/RingBackground';
 import CursorEffects from '@/components/effects/CursorEffects';
+import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -22,10 +22,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <SvgDefs />
-        <RingBackground />
-        {children}
-        <CursorEffects />
+        <ThemeProvider>
+          <SvgDefs />
+          {children}
+          <CursorEffects />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -58,14 +58,3 @@ export const filters = [
   { label: 'TypeScript', value: 'typescript' },
   { label: 'TensorFlow', value: 'tensorflow' },
 ];
-
-export const techStack = [
-  'React',
-  'Node.js',
-  'Next.js',
-  'TypeScript',
-  'PostgreSQL',
-  'Express',
-  'Docker',
-  'Git',
-];

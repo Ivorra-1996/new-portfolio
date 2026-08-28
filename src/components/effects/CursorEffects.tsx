@@ -5,23 +5,13 @@ import { useEffect } from 'react';
 export default function CursorEffects() {
   useEffect(() => {
     const ring = document.getElementById('ringCursor');
-    const pupil = document.getElementById('eyePupil');
-    const eyeWrap = document.querySelector('.nav-eye-mark');
 
+    // El seguimiento del Ojo lo maneja el propio shader (EvilEye), acá solo
+    // movemos el Anillo-cursor.
     function onMove(e: MouseEvent) {
       if (ring) {
         ring.style.left = e.clientX + 'px';
         ring.style.top = e.clientY + 'px';
-      }
-      if (pupil && eyeWrap) {
-        const rect = eyeWrap.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const dx = e.clientX - cx;
-        const dy = e.clientY - cy;
-        const angle = Math.atan2(dx, -dy) * (180 / Math.PI);
-        const clamped = Math.max(-18, Math.min(18, angle / 4));
-        (pupil as HTMLElement).style.transform = `translate(-50%,-50%) rotate(${clamped}deg)`;
       }
     }
 
@@ -52,18 +42,8 @@ export default function CursorEffects() {
 
   return (
     <div id="ringCursor" className="ring-cursor" aria-hidden="true">
-      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-        <circle cx="15" cy="15" r="11" stroke="currentColor" strokeWidth="2.4" />
-      </svg>
-      <svg className="rune" width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <path
-          d="M3 10 L7 4 L10 12 L13 5 L17 10"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      {/* eslint-disable-next-line @next/next/no-img-element -- cursor fijo, necesita <img> plana, no el wrapper de next/image */}
+      <img src="/anillo.png" alt="" width={30} height={26} draggable={false} />
     </div>
   );
 }

@@ -1,25 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
-const STORAGE_KEY = 'portfolio-theme';
+import { useTheme } from './ThemeProvider';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-
-  useEffect(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    const initial = stored === 'light' ? 'light' : 'dark';
-    setTheme(initial);
-    document.documentElement.setAttribute('data-theme', initial);
-  }, []);
-
-  function toggleTheme() {
-    const next = theme === 'dark' ? 'light' : 'dark';
-    setTheme(next);
-    document.documentElement.setAttribute('data-theme', next);
-    window.localStorage.setItem(STORAGE_KEY, next);
-  }
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <button
