@@ -1,5 +1,3 @@
-export type ProjectIcon = 'hand' | 'checklist' | 'coins' | 'towers';
-
 export type Project = {
   title: string;
   tag: string;
@@ -7,7 +5,6 @@ export type Project = {
   stack: string[];
   tech: string[];
   link: string;
-  icon: ProjectIcon;
 };
 
 export const projects: Project[] = [
@@ -19,7 +16,6 @@ export const projects: Project[] = [
     stack: ['Next.js', 'TensorFlow', 'YOLO'],
     tech: ['nextjs', 'tensorflow', 'yolo'],
     link: 'https://github.com/ADOX-SA/lavadodemanos_demo',
-    icon: 'hand',
   },
   {
     title: '[Ejemplo] Gestor de tareas',
@@ -28,7 +24,6 @@ export const projects: Project[] = [
     stack: ['React', 'Node.js', 'TypeScript'],
     tech: ['react', 'node', 'typescript'],
     link: '#',
-    icon: 'checklist',
   },
   {
     title: '[Ejemplo] API de pagos',
@@ -37,7 +32,6 @@ export const projects: Project[] = [
     stack: ['Node.js', 'Express', 'PostgreSQL'],
     tech: ['node', 'express', 'postgresql'],
     link: '#',
-    icon: 'coins',
   },
   {
     title: '[Ejemplo] Landing corporativa',
@@ -46,7 +40,6 @@ export const projects: Project[] = [
     stack: ['Next.js', 'React', 'TypeScript'],
     tech: ['nextjs', 'react', 'typescript'],
     link: '#',
-    icon: 'towers',
   },
 ];
 

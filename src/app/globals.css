@@ -483,16 +483,6 @@ a {
   border-style: dashed;
   justify-content: center;
 }
-.project-art {
-  display: flex;
-  justify-content: center;
-  margin: -6px 0 4px;
-}
-.project-art svg {
-  width: 170px;
-  height: 100px;
-  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.55));
-}
 .project-tag {
   font-family: 'Work Sans', sans-serif;
   font-size: 12px;

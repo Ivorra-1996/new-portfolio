@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import SvgDefs from '@/components/effects/SvgDefs';
 import CursorEffects from '@/components/effects/CursorEffects';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'José Ivorra — Desarrollador Backend',
+  title: 'José Ivorra — Desarrollador Frontend',
   description:
-    'Portfolio de José Ivorra, desarrollador backend. Forjado en las fraguas del código, con un guiño a la Tierra Media.',
+    'Portfolio de José Ivorra, desarrollador frontend. Forjado en las fraguas del código, con un guiño a la Tierra Media.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -23,7 +22,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ThemeProvider>
-          <SvgDefs />
           {children}
           <CursorEffects />
         </ThemeProvider>

@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { filters, projects } from '@/data/projects';
-import ProjectArt from './ProjectArt';
 
 export default function Artefactos() {
   const [active, setActive] = useState('all');
@@ -30,7 +29,6 @@ export default function Artefactos() {
         <div className="projects-grid">
           {visible.map((project) => (
             <article className="project-card interactive-hot" key={project.title}>
-              <ProjectArt icon={project.icon} />
               <div className="project-tag">{project.tag}</div>
               <h3>{project.title}</h3>
               <p>{project.description}</p>

@@ -4,10 +4,9 @@ export default function Hero() {
       <div className="hero-content">
         <p className="hero-kicker">Forjado en las fraguas del código</p>
         <h1 className="hero-name">José Ivorra</h1>
-        <p className="hero-role">Desarrollador Backend</p>
+        <p className="hero-role">Desarrollador Frontend</p>
         <p className="hero-tagline">
-          Construyo sistemas sólidos línea por línea, con la misma paciencia con la que se forja un arma legendaria.
-          Un poco de Front-end también, para no depender de nadie más.
+          Construyo interfaces sólidas línea por línea, con la misma paciencia con la que se forja un arma legendaria.
         </p>
         <div className="hero-actions">
           <a href="#artefactos" className="btn btn-primary interactive-hot">
