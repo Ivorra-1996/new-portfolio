@@ -27,7 +27,7 @@ export default function Header() {
               noiseScale={1}
               pupilFollow={1}
               flameSpeed={1}
-              backgroundColor="#120F17"
+              backgroundColor="#0a0908"
             />
           ) : (
             <>

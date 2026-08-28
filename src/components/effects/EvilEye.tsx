@@ -178,7 +178,7 @@ export default function EvilEye({
   noiseScale = 1.0,
   pupilFollow = 1.0,
   flameSpeed = 1.0,
-  backgroundColor = '#120F17',
+  backgroundColor = '#0a0908',
 }: EvilEyeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
