@@ -621,6 +621,38 @@ a {
 }
 
 /* cursor-Anillo */
+@property --shake-x {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+@property --shake-y {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+@keyframes ringShake {
+  0% {
+    --shake-x: -1;
+    --shake-y: 0.6;
+  }
+  25% {
+    --shake-x: 0.8;
+    --shake-y: -1;
+  }
+  50% {
+    --shake-x: -0.6;
+    --shake-y: 0.9;
+  }
+  75% {
+    --shake-x: 1;
+    --shake-y: -0.7;
+  }
+  100% {
+    --shake-x: -1;
+    --shake-y: 0.6;
+  }
+}
 .ring-cursor {
   position: fixed;
   top: 0;
@@ -630,14 +662,75 @@ a {
   transform: translate(-50%, -50%);
   transition: filter 0.25s ease;
   filter: drop-shadow(0 0 6px rgba(201, 214, 223, 0.6));
+  --proximity: 0;
+  animation: ringShake 0.18s steps(2) infinite;
 }
 .ring-cursor img {
   display: block;
   user-select: none;
+  transform: translate(calc(var(--proximity) * 2px * var(--shake-x)), calc(var(--proximity) * 2px * var(--shake-y)));
 }
 .ring-cursor.is-hot {
   filter: drop-shadow(0 0 16px rgba(255, 111, 55, 0.95));
 }
 [data-theme='light'] .ring-cursor.is-hot {
   filter: drop-shadow(0 0 16px rgba(200, 160, 90, 0.95));
+}
+
+/* mensaje profético al acercar el Anillo al Ojo */
+.ring-prophecy {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.ring-prophecy.is-visible {
+  opacity: 1;
+}
+.ring-prophecy-backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(5, 4, 3, 0.95) 0%, rgba(5, 4, 3, 0.8) 100%);
+}
+.ring-prophecy-text {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px;
+  text-align: center;
+}
+.ring-prophecy-text p {
+  font-family: 'UnifrakturCook', 'Cinzel', Georgia, serif;
+  font-size: clamp(20px, 3vw, 34px);
+  color: var(--fire);
+  text-shadow: 0 0 30px rgba(255, 111, 55, 0.6);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.ring-prophecy.is-visible .ring-prophecy-text p {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ring-prophecy-text p:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.ring-prophecy-text p:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.ring-prophecy-text p:nth-child(3) {
+  transition-delay: 0.25s;
+}
+.ring-prophecy-text p:nth-child(4) {
+  transition-delay: 0.35s;
+}
+.ring-prophecy-text p:nth-child(5) {
+  transition-delay: 0.45s;
 }

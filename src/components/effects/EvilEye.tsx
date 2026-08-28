@@ -14,6 +14,10 @@ interface EvilEyeProps {
   pupilFollow?: number;
   flameSpeed?: number;
   backgroundColor?: string;
+  /** Cuánto crece pupilSize/scale/flameSpeed cuando el Anillo está cerca (0 = quieto, 1 = pegado al Ojo). */
+  pupilSizeBoost?: number;
+  scaleBoost?: number;
+  flameSpeedBoost?: number;
 }
 
 function hexToVec3(hex: string): [number, number, number] {
@@ -179,6 +183,9 @@ export default function EvilEye({
   pupilFollow = 1.0,
   flameSpeed = 1.0,
   backgroundColor = '#0a0908',
+  pupilSizeBoost = 0.35,
+  scaleBoost = 0.5,
+  flameSpeedBoost = 3,
 }: EvilEyeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -263,6 +270,15 @@ export default function EvilEye({
       mouse.y += (mouse.ty - mouse.y) * 0.05;
       program.uniforms.uMouse.value = [mouse.x, mouse.y];
       program.uniforms.uTime.value = time * 0.001;
+
+      // Cuánto más cerca esté el Anillo del Ojo (CursorEffects.tsx escribe esta
+      // variable en .nav-eye-mark, que hereda hacia este contenedor), más
+      // "raro" se pone: la pupila crece, el ojo se agranda y la llama se acelera.
+      const proximity = parseFloat(getComputedStyle(container).getPropertyValue('--proximity')) || 0;
+      program.uniforms.uPupilSize.value = pupilSize + proximity * pupilSizeBoost;
+      program.uniforms.uScale.value = scale + proximity * scaleBoost;
+      program.uniforms.uFlameSpeed.value = flameSpeed + (proximity * flameSpeedBoost) / 2;
+
       renderer.render({ scene: mesh });
     }
     animationFrameId = requestAnimationFrame(update);
@@ -274,7 +290,11 @@ export default function EvilEye({
       container.removeChild(gl.canvas);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
-  }, [eyeColor, intensity, pupilSize, irisWidth, glowIntensity, scale, noiseScale, pupilFollow, flameSpeed, backgroundColor]);
+    // pupilSize/scale/flameSpeed y sus *Boost se leen en vivo dentro de update()
+    // a propósito: no van en las dependencias para no recrear el contexto WebGL
+    // en cada cambio de proximidad (eso sí sería carísimo, 60 veces por segundo).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [eyeColor, intensity, irisWidth, glowIntensity, noiseScale, pupilFollow, backgroundColor]);
 
   return <div ref={containerRef} className="evil-eye-container" />;
 }
