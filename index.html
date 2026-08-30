@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>José Ivorra — Desarrollador Frontend</title>
+  <meta
+    name="description"
+    content="Portfolio de José Ivorra, desarrollador frontend freelance. Interfaces prolijas sostenidas con criterio técnico: documentación, arquitectura y detalle."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="#top" class="logo">JI.</a>
+      <nav class="nav" aria-label="Principal">
+        <ul class="nav__list" id="navList">
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navList">
+          <span></span><span></span><span></span>
+          <span class="sr-only">Abrir menú</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero__inner">
+        <p class="eyebrow" data-reveal>Desarrollador Frontend</p>
+        <h1 class="hero__title" data-reveal>José Ivorra</h1>
+        <p class="hero__lead" data-reveal>
+          Construyo interfaces prolijas y las sostengo con criterio técnico: leo especificaciones antes de
+          consumirlas, documento cada decisión y cuido el detalle hasta que funciona bien de verdad, no solo se ve
+          bien en una captura.
+        </p>
+        <div class="hero__actions" data-reveal>
+          <a href="#proyectos" class="btn btn--primary">Ver proyectos</a>
+          <a href="#contacto" class="btn btn--ghost">Hablemos de tu proyecto</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos">
+      <div class="container">
+        <h2 class="section__title" data-reveal>Proyectos destacados</h2>
+        <p class="section__lead" data-reveal>
+          Dos casos desarrollados en profundidad, con el problema que resuelven y las decisiones técnicas detrás de
+          cada uno.
+        </p>
+
+        <article class="case-study" id="la-cripta" data-reveal>
+          <div class="case-study__media" data-bg-slot="la-cripta">
+            <!-- Acá monta el fondo animado: Three.js + GLSL, flow-field de hilos finos gris ceniza/blanco -->
+            <span class="case-study__media-placeholder">[Captura / demo de La Cripta]</span>
+          </div>
+          <div class="case-study__body">
+            <p class="case-study__tag">Sitio web · Three.js / GLSL</p>
+            <h3 class="case-study__title">La Cripta</h3>
+            <p class="case-study__desc">
+              Prototipo de sitio para una coctelería con temática gótica: menú de cócteles, buscador A–Z, pantallas
+              de estado y una página de detalle por cóctel.
+            </p>
+            <ul class="case-study__decisions">
+              <li>
+                Fondo animado hecho a mano con Three.js + GLSL: un flow-field donde líneas finas grises y blancas se
+                agrupan y se separan sobre el fondo oscuro, en vez de resolverlo con una librería como Vanta.js.
+              </li>
+              <li>Buscador A–Z pensado para un menú largo, sin depender de scroll infinito.</li>
+              <li>Estados de carga y de vacío tratados como pantallas propias, no como un spinner genérico.</li>
+            </ul>
+            <a href="#" class="case-study__link">Ver demo →</a>
+          </div>
+        </article>
+
+        <article class="case-study case-study--reverse" id="shield" data-reveal>
+          <div class="case-study__media" data-bg-slot="shield">
+            <span class="case-study__media-placeholder">[Captura / demo de SHIELD]</span>
+          </div>
+          <div class="case-study__body">
+            <p class="case-study__tag">Dashboard interno · HTML/CSS/JS puro</p>
+            <h3 class="case-study__title">SHIELD</h3>
+            <p class="case-study__desc">
+              Dashboard de monitoreo de riesgo de clientes, armado como un único HTML autocontenido: sin frameworks,
+              con custom properties, Grid/Flexbox y SVG inline.
+            </p>
+            <ul class="case-study__decisions">
+              <li>Tarjeta principal de score de riesgo con anillo de progreso hecho en SVG circular.</li>
+              <li>Chips de factores de riesgo con codificación de color por severidad.</li>
+              <li>
+                Paneles con tabs (Información, Actividad, Documentación, Verificaciones, Familia) y un timeline de
+                comentarios estilo GitHub.
+              </li>
+              <li>Sidebar off-canvas tipo hamburguesa para mobile.</li>
+              <li>
+                <strong>Decisión técnica:</strong> se reconstruyó por completo en Flexbox porque el entorno de
+                renderizado final no soportaba CSS Grid — la prioridad fue que funcionara ahí, no la elegancia del
+                layout ideal.
+              </li>
+            </ul>
+            <a href="#" class="case-study__link">Ver demo →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="sobre-mi">
+      <div class="container container--narrow">
+        <h2 class="section__title" data-reveal>Sobre mí</h2>
+        <p class="about__text" data-reveal>
+          Además de la parte visual, me interesa el criterio técnico detrás de cada interfaz: leer especificaciones
+          de API antes de consumirlas, entender cómo encaja el frontend en una arquitectura de microservicios,
+          escribir documentación técnica que otra persona pueda seguir sin tener que preguntarme, e interpretar
+          auditorías de seguridad para no introducir problemas por accidente.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contacto">
+      <div class="container container--narrow">
+        <h2 class="section__title" data-reveal>Contacto</h2>
+        <p class="section__lead" data-reveal>¿Tenés un proyecto frontend en mente? Escribime.</p>
+        <ul class="contact-list" data-reveal>
+          <li><a href="mailto:ivorrajosemaria@gmail.com">ivorrajosemaria@gmail.com</a></li>
+          <li><a href="https://github.com/Ivorra-1996" target="_blank" rel="noreferrer">GitHub</a></li>
+          <li>
+            <a href="#" target="_blank" rel="noreferrer">Workana</a>
+            <small>[agregar enlace al perfil]</small>
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+            <small>[agregar enlace al perfil]</small>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span id="year"></span> José Ivorra</p>
+      <a href="#top" class="site-footer__top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
