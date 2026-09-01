@@ -1,4 +1,13 @@
 import './style.css';
+import { initMoltenMetal } from './moltenMetal';
+
+// Fondo animado de toda la página (shader MoltenMetal, reacciona al mouse).
+// Fijo detrás de todo el contenido entre el header y el footer (ambos opacos
+// para taparlo ahí).
+const siteBg = document.getElementById('siteBg');
+if (siteBg) {
+  initMoltenMetal(siteBg);
+}
 
 // Año dinámico en el footer
 const yearEl = document.getElementById('year');

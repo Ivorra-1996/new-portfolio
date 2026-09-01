@@ -1,4 +1,4 @@
-# José Ivorra — Portfolio
+# José Ivorra Adamowicz — Portfolio
 
 Portfolio personal como desarrollador frontend. HTML/CSS/TypeScript sin frameworks de UI (nada de React/Vue) — el código sigue siendo DOM plano, pero con `npm install`, TypeScript y hot-reload vía [Vite](https://vitejs.dev), para poder sumar librerías (por ejemplo `three`) más adelante sin fricción.
 

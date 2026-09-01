@@ -135,6 +135,16 @@ h3 {
   color: var(--color-bg);
 }
 
+/* Fondo animado de toda la página: fijo detrás de header/main/footer.
+   El header y el footer llevan fondo opaco (--color-bg) para taparlo ahí —
+   solo se ve entre ellos, detrás de las secciones (que no tienen background
+   propio y lo dejan pasar). */
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
 :focus-visible {
   outline: none;
   box-shadow: var(--focus-ring);
@@ -183,7 +193,7 @@ h3 {
 }
 
 .section {
-  padding-block: var(--space-6);
+  padding-block: var(--space-1);
 }
 .section__title {
   font-size: var(--fs-h1);
@@ -193,7 +203,7 @@ h3 {
   font-size: var(--fs-lead);
   color: var(--color-text-muted);
   max-width: 46ch;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-1);
 }
 
 /* ============================================
@@ -203,8 +213,7 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(8px);
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
 }
 .site-header__inner {
@@ -285,12 +294,22 @@ h3 {
    HERO
    ============================================ */
 .hero {
+  position: relative;
   min-height: min(88vh, 720px);
   display: flex;
   align-items: center;
 }
 .hero__inner {
+  position: relative;
+  z-index: 1;
   max-width: 760px;
+}
+.hero__inner::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -48px -64px;
+  background: radial-gradient(ellipse at center, rgba(10, 10, 10, 0.6) 0%, rgba(10, 10, 10, 0) 72%);
 }
 .eyebrow {
   font-family: var(--font-display);
@@ -479,6 +498,8 @@ h3 {
    FOOTER
    ============================================ */
 .site-footer {
+  position: relative;
+  background: var(--color-bg);
   border-top: 1px solid var(--color-border);
   padding-block: var(--space-3);
 }
