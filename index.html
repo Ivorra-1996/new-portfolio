@@ -40,7 +40,7 @@
     <section class="hero" id="top">
       <div class="container hero__inner">
         <p class="eyebrow" data-reveal>Desarrollador Frontend</p>
-        <h1 class="hero__title" data-reveal>José Ivorra Adamowicz</h1>
+        <h1 class="hero__title">José Ivorra Adamowicz</h1>
         <p class="hero__lead" data-reveal>
           Construyo interfaces prolijas y las sostengo con criterio técnico: leo especificaciones antes de
           consumirlas, documento cada decisión y cuido el detalle hasta que funciona bien de verdad, no solo se ve
@@ -57,8 +57,7 @@
       <div class="container">
         <h2 class="section__title" data-reveal>Proyectos destacados</h2>
         <p class="section__lead" data-reveal>
-          Dos casos desarrollados en profundidad, con el problema que resuelven y las decisiones técnicas detrás de
-          cada uno.
+          Proyectos reales, con el problema que resuelven y las decisiones técnicas detrás de cada uno.
         </p>
 
         <article class="case-study" id="la-cripta" data-reveal>
@@ -81,36 +80,169 @@
               <li>Buscador A–Z pensado para un menú largo, sin depender de scroll infinito.</li>
               <li>Estados de carga y de vacío tratados como pantallas propias, no como un spinner genérico.</li>
             </ul>
-            <a href="#" class="case-study__link">Ver demo →</a>
+            <a href="https://github.com/Ivorra-1996/Cocteleria" class="case-study__link" target="_blank" rel="noreferrer">Ver repositorio →</a>
           </div>
         </article>
 
-        <article class="case-study case-study--reverse" id="shield" data-reveal>
-          <div class="case-study__media" data-bg-slot="shield">
-            <span class="case-study__media-placeholder">[Captura / demo de SHIELD]</span>
+        <article class="case-study case-study--reverse" id="lavado-de-manos" data-reveal>
+          <div class="case-study__media">
+            <span class="case-study__media-placeholder">[Captura / demo de Lavado de manos con IA]</span>
           </div>
           <div class="case-study__body">
-            <p class="case-study__tag">Dashboard interno · HTML/CSS/JS puro</p>
-            <h3 class="case-study__title">SHIELD</h3>
+            <p class="case-study__tag">Demo · IA / Visión artificial</p>
+            <h3 class="case-study__title">Lavado de manos con IA</h3>
             <p class="case-study__desc">
-              Dashboard de monitoreo de riesgo de clientes, armado como un único HTML autocontenido: sin frameworks,
-              con custom properties, Grid/Flexbox y SVG inline.
+              Demo que reconoce y supervisa cada paso del lavado de manos en tiempo real mediante un modelo de
+              inteligencia artificial.
             </p>
             <ul class="case-study__decisions">
-              <li>Tarjeta principal de score de riesgo con anillo de progreso hecho en SVG circular.</li>
-              <li>Chips de factores de riesgo con codificación de color por severidad.</li>
-              <li>
-                Paneles con tabs (Información, Actividad, Documentación, Verificaciones, Familia) y un timeline de
-                comentarios estilo GitHub.
-              </li>
-              <li>Sidebar off-canvas tipo hamburguesa para mobile.</li>
-              <li>
-                <strong>Decisión técnica:</strong> se reconstruyó por completo en Flexbox porque el entorno de
-                renderizado final no soportaba CSS Grid — la prioridad fue que funcionara ahí, no la elegancia del
-                layout ideal.
-              </li>
+              <li>Detección de cada paso del lavado con un modelo YOLO.</li>
+              <li>Frontend en Next.js sirviendo de capa de presentación sobre el modelo entrenado en TensorFlow.</li>
             </ul>
-            <a href="#" class="case-study__link">Ver demo →</a>
+            <a href="https://github.com/ADOX-SA/lavadodemanos_demo" class="case-study__link" target="_blank" rel="noreferrer">Ver repositorio →</a>
+          </div>
+        </article>
+
+        <article class="case-study" id="pasteleria" data-reveal>
+          <div class="case-study__media">
+            <span class="case-study__media-placeholder">[Captura / demo de Pasteler-a]</span>
+          </div>
+          <div class="case-study__body">
+            <p class="case-study__tag">E-commerce · Next.js</p>
+            <h3 class="case-study__title">Pasteler-a</h3>
+            <p class="case-study__desc">
+              Storefront de e-commerce para una pastelería artesanal: catálogo de productos, carrito y flujo de
+              pago.
+            </p>
+            <ul class="case-study__decisions">
+              <li>Carrito persistente en localStorage, con estado global manejado por Context API.</li>
+              <li>Sin backend: catálogo hardcodeado, pensado para conectar una API más adelante sin rehacer la UI.</li>
+              <li>SEO cubierto con sitemap, robots.txt y generación de imagen para compartir en redes.</li>
+            </ul>
+            <a href="https://github.com/Ivorra-1996/Pasteler-a" class="case-study__link" target="_blank" rel="noreferrer">Ver repositorio →</a>
+          </div>
+        </article>
+
+        <article class="case-study case-study--reverse" id="lust" data-reveal>
+          <div class="case-study__media">
+            <span class="case-study__media-placeholder">[Captura / demo de Lust]</span>
+          </div>
+          <div class="case-study__body">
+            <p class="case-study__tag">Demo de producto · Contenido 18+</p>
+            <h3 class="case-study__title">Lust</h3>
+            <p class="case-study__desc">
+              Frontend de una plataforma de contenido por suscripción: onboarding, feed, mensajería y perfiles.
+            </p>
+            <ul class="case-study__decisions">
+              <li>Sistema de diseño propio ("Neon Nightlife") hecho con CSS puro, sin librería de UI.</li>
+              <li>Flujo de auth completo (login, registro, recuperación) con credenciales de demo, sin backend real.</li>
+              <li>Dashboard con feed, exploración, perfiles, mensajería y gestión de suscripciones.</li>
+            </ul>
+            <a href="https://github.com/Ivorra-1996/Lust" class="case-study__link" target="_blank" rel="noreferrer">Ver repositorio →</a>
+          </div>
+        </article>
+
+        <article class="case-study" id="autobids" data-reveal>
+          <div class="case-study__media">
+            <span class="case-study__media-placeholder">[Captura / demo de AutoBids]</span>
+          </div>
+          <div class="case-study__body">
+            <p class="case-study__tag">Marketplace · React</p>
+            <h3 class="case-study__title">AutoBids</h3>
+            <p class="case-study__desc">
+              Plataforma de subastas de autos: listado, ficha de vehículo y filtros por estado.
+            </p>
+            <ul class="case-study__decisions">
+              <li>Datos mock en <code>src/data/cars.ts</code>, con la estructura lista para conectar una API real.</li>
+              <li>Formularios con React Hook Form + Zod, y TanStack Query para el manejo de datos.</li>
+              <li>UI armada con Tailwind CSS + shadcn/ui.</li>
+            </ul>
+            <a href="https://modern-cars-flax.vercel.app" class="case-study__link" target="_blank" rel="noreferrer">Ver demo →</a>
+          </div>
+        </article>
+
+        <article class="case-study case-study--reverse" id="ai-solutions" data-reveal>
+          <div class="case-study__media">
+            <span class="case-study__media-placeholder">[Captura / demo de AI Solutions]</span>
+          </div>
+          <div class="case-study__body">
+            <p class="case-study__tag">Landing · IA</p>
+            <h3 class="case-study__title">AI Solutions</h3>
+            <p class="case-study__desc">
+              Landing bilingüe (ES/EN) para una empresa de soluciones de IA en industria, agroindustria y
+              construcción.
+            </p>
+            <ul class="case-study__decisions">
+              <li>Hero 3D hecho con Three.js vía <code>@react-three/fiber</code>.</li>
+              <li>Contenido bilingüe manejado con un Context propio, sin librería de i18n.</li>
+              <li>Formulario de contacto sin backend: arma un <code>mailto:</code> y lo abre en el cliente de correo del visitante.</li>
+            </ul>
+            <a href="https://github.com/Ivorra-1996/ai-solutions" class="case-study__link" target="_blank" rel="noreferrer">Ver repositorio →</a>
+          </div>
+        </article>
+
+        <article class="case-study" id="psicologia-web" data-reveal>
+          <div class="case-study__media">
+            <span class="case-study__media-placeholder">[Captura / demo de Psicología Web]</span>
+          </div>
+          <div class="case-study__body">
+            <p class="case-study__tag">Landing · Servicios profesionales</p>
+            <h3 class="case-study__title">Psicología Web</h3>
+            <p class="case-study__desc">
+              Landing profesional para presentar servicios de un consultorio de psicología.
+            </p>
+            <ul class="case-study__decisions">
+              <li>Armada con shadcn/ui + Tailwind CSS sobre Vite, priorizando carga rápida y accesibilidad.</li>
+            </ul>
+            <a href="https://psicologia-web-sigma.vercel.app" class="case-study__link" target="_blank" rel="noreferrer">Ver demo →</a>
+          </div>
+        </article>
+
+        <article class="case-study case-study--reverse" id="gym-link" data-reveal>
+          <div class="case-study__media">
+            <span class="case-study__media-placeholder">[Captura / demo de Gym Link]</span>
+          </div>
+          <div class="case-study__body">
+            <p class="case-study__tag">App móvil · En desarrollo</p>
+            <h3 class="case-study__title">Gym Link</h3>
+            <p class="case-study__desc">
+              App de gimnasio para mobile, todavía en etapa temprana de desarrollo.
+            </p>
+            <ul class="case-study__decisions">
+              <li>Base con React Native + Expo, con soporte para Android, iOS y Expo Go.</li>
+              <li>Estructura con ruteo basado en archivos, recién arrancando sobre el template de Expo.</li>
+            </ul>
+            <a href="https://github.com/Ivorra-1996/gym-link" class="case-study__link" target="_blank" rel="noreferrer">Ver repositorio →</a>
+          </div>
+        </article>
+
+        <article class="case-study" id="landing-creativa" data-reveal>
+          <div class="case-study__media">
+            <span class="case-study__media-placeholder">[Captura / demo de Landing Creativa]</span>
+          </div>
+          <div class="case-study__body">
+            <p class="case-study__tag">Landing · Vue</p>
+            <h3 class="case-study__title">Landing Creativa</h3>
+            <p class="case-study__desc">Landing page creativa construida con Vue.</p>
+            <ul class="case-study__decisions">
+              <li>Vue + TypeScript sobre Vite, con estilos en Tailwind CSS.</li>
+            </ul>
+            <a href="https://landing-creativa.vercel.app" class="case-study__link" target="_blank" rel="noreferrer">Ver demo →</a>
+          </div>
+        </article>
+
+        <article class="case-study case-study--reverse" id="grupos-de-estudio" data-reveal>
+          <div class="case-study__media">
+            <span class="case-study__media-placeholder">[Captura / demo de Grupos de Estudio]</span>
+          </div>
+          <div class="case-study__body">
+            <p class="case-study__tag">App · En desarrollo</p>
+            <h3 class="case-study__title">Grupos de Estudio</h3>
+            <p class="case-study__desc">Aplicación para organizar y gestionar grupos de estudio.</p>
+            <ul class="case-study__decisions">
+              <li>Vue + TypeScript sobre Vite, con estilos en Tailwind CSS. Todavía en etapa temprana.</li>
+            </ul>
+            <a href="https://grupos-de-estudios.vercel.app" class="case-study__link" target="_blank" rel="noreferrer">Ver demo →</a>
           </div>
         </article>
       </div>

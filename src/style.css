@@ -189,7 +189,7 @@ h3 {
   padding-inline: var(--gutter);
 }
 .container--narrow {
-  max-width: var(--container-narrow);
+  /* max-width: var(--container-narrow); */
 }
 
 .section {
@@ -302,7 +302,7 @@ h3 {
 .hero__inner {
   position: relative;
   z-index: 1;
-  max-width: 760px;
+  /* max-width: 760px; */
 }
 .hero__inner::before {
   content: '';
@@ -322,6 +322,27 @@ h3 {
 .hero__title {
   font-size: var(--fs-hero);
   margin-bottom: var(--space-3);
+}
+/* Efecto typewriter del nombre, armado en main.ts: tipea letra por letra y
+   deja un cursor "_" titilando al final. Si JS no corre, el <h1> se queda
+   con su texto plano tal cual. */
+.hero__title-cursor {
+  display: inline-block;
+  color: var(--color-accent);
+  margin-left: 0.05em;
+}
+.hero__title-cursor--blink {
+  animation: hero-cursor-blink 1s step-end infinite;
+}
+@keyframes hero-cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__title-cursor--blink {
+    animation: none;
+  }
 }
 .hero__lead {
   font-size: var(--fs-lead);
@@ -433,6 +454,13 @@ h3 {
 }
 .case-study__decisions li {
   list-style: disc;
+}
+.case-study__decisions code {
+  font-size: 0.9em;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.1em 0.4em;
 }
 .case-study__link {
   display: inline-block;

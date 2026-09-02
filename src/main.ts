@@ -9,6 +9,43 @@ if (siteBg) {
   initMoltenMetal(siteBg);
 }
 
+// Efecto typewriter en el nombre del hero: tipea letra por letra y deja un
+// cursor "_" titilando al final. El aria-label conserva el nombre completo
+// para lectores de pantalla; el texto tipeado y el cursor van aria-hidden
+// porque son puramente visuales.
+const heroTitle = document.querySelector<HTMLElement>('.hero__title');
+if (heroTitle) {
+  const text = heroTitle.textContent?.trim() ?? '';
+  heroTitle.textContent = '';
+  heroTitle.setAttribute('aria-label', text);
+
+  const typed = document.createElement('span');
+  typed.setAttribute('aria-hidden', 'true');
+  const cursor = document.createElement('span');
+  cursor.className = 'hero__title-cursor';
+  cursor.textContent = '_';
+  cursor.setAttribute('aria-hidden', 'true');
+  heroTitle.append(typed, cursor);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    typed.textContent = text;
+    cursor.classList.add('hero__title-cursor--blink');
+  } else {
+    let i = 0;
+    const typeStep = () => {
+      i++;
+      typed.textContent = text.slice(0, i);
+      if (i < text.length) {
+        setTimeout(typeStep, 55);
+      } else {
+        cursor.classList.add('hero__title-cursor--blink');
+      }
+    };
+    setTimeout(typeStep, 300);
+  }
+}
+
 // Año dinámico en el footer
 const yearEl = document.getElementById('year');
 if (yearEl) {
