@@ -355,6 +355,8 @@ h3 {
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* ============================================
@@ -585,14 +587,6 @@ h3 {
     grid-template-columns: 1fr;
     direction: ltr;
   }
-}
-
-/* ============================================
-   ABOUT
-   ============================================ */
-.about__text {
-  font-size: var(--fs-lead);
-  color: var(--color-text-muted);
 }
 
 /* ============================================
