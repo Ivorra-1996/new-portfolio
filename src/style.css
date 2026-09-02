@@ -193,7 +193,8 @@ h3 {
 }
 
 .section {
-  padding-block: var(--space-1);
+  padding-block: var(--space-3);
+  padding-bottom: var(--space-2);
 }
 .section__title {
   font-size: var(--fs-h1);
@@ -295,7 +296,7 @@ h3 {
    ============================================ */
 .hero {
   position: relative;
-  min-height: min(88vh, 720px);
+  min-height: min(88vh, 480px);
   display: flex;
   align-items: center;
 }
@@ -354,6 +355,102 @@ h3 {
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
+}
+
+/* ============================================
+   CLIENTS (logo carousel)
+   ============================================ */
+.clients {
+  padding-block: var(--space-3);
+  /* border-bottom: 1px solid var(--color-border); */
+}
+.clients__label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: var(--fs-micro);
+  color: var(--color-text-dim);
+  margin-bottom: var(--space-3);
+}
+.clients__track-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+.clients__track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  width: max-content;
+  /* Son solo 3 logos: el set se repite 8 veces en el HTML (1 real + 7 ocultas)
+     para que siempre haya contenido cubriendo la pantalla. La animación
+     avanza exactamente 1/8 del track (un set completo) y vuelve a 0 — como
+     las 8 copias son idénticas, el salto es invisible. Si el owner suma o
+     saca clientes, ajustar la cantidad de copias en el HTML y este 12.5%
+     (=100%/8) en conjunto. */
+  animation: clients-scroll 24s linear infinite;
+}
+.clients__track:hover {
+  animation-play-state: paused;
+}
+.clients__track li {
+  flex: none;
+  display: flex;
+  align-items: center;
+}
+.clients__track img {
+  height: 40px;
+  width: auto;
+  filter: grayscale(1);
+  opacity: 0.55;
+  transition: filter var(--transition), opacity var(--transition);
+}
+.clients__track a:hover img,
+.clients__track a:focus-visible img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+.clients__chip {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: 1.4rem;
+  color: var(--color-text-dim);
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0.75;
+  transition: color var(--transition), opacity var(--transition);
+}
+.clients__chip:hover,
+.clients__chip:focus-visible {
+  color: var(--color-accent);
+  opacity: 1;
+}
+.clients__chip-sub {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-micro);
+  color: inherit;
+}
+@keyframes clients-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-12.5%); /* 100% / 8 copias */
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clients__track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+  .clients__track li[aria-hidden='true'] {
+    display: none;
+  }
 }
 
 /* ============================================
