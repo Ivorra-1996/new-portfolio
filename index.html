@@ -6,8 +6,29 @@
   <title>José Ivorra Adamowicz — Desarrollador Frontend</title>
   <meta
     name="description"
-    content="Portfolio de José Ivorra Adamowicz desarrollador frontend freelance. Interfaces prolijas sostenidas con criterio técnico: documentación, arquitectura y detalle."
+    content="Portfolio de José Ivorra Adamowicz, desarrollador frontend freelance. Interfaces prolijas con React, Vue, Next.js, React Native y TypeScript."
   />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph / redes sociales. og:url no está puesto porque el sitio todavía
+       no tiene dominio propio (no está deployado) — agregarlo con la URL real
+       una vez que exista. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="José Ivorra Adamowicz — Desarrollador Frontend" />
+  <meta
+    property="og:description"
+    content="Portfolio de José Ivorra Adamowicz, desarrollador frontend freelance. Interfaces prolijas con React, Vue, Next.js, React Native y TypeScript."
+  />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:locale" content="es_AR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="José Ivorra Adamowicz — Desarrollador Frontend" />
+  <meta
+    name="twitter:description"
+    content="Portfolio de José Ivorra Adamowicz, desarrollador frontend freelance. Interfaces prolijas con React, Vue, Next.js, React Native y TypeScript."
+  />
+  <meta name="twitter:image" content="/og-image.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -21,7 +42,12 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a href="#top" class="logo">JI.</a>
+      <a href="#top" class="logo" aria-label="José Ivorra Adamowicz — inicio">
+        <svg class="logo__mark" viewBox="0 0 100 100" aria-hidden="true">
+          <polygon points="50,4 91,27 91,73 50,96 9,73 9,27" />
+          <text x="50" y="63" text-anchor="middle">JI</text>
+        </svg>
+      </a>
       <nav class="nav" aria-label="Principal">
         <ul class="nav__list" id="navList">
           <li><a href="#proyectos">Proyectos</a></li>
@@ -397,10 +423,6 @@
         <ul class="contact-list" data-reveal>
           <li><a href="mailto:ivorrajosemaria@gmail.com">ivorrajosemaria@gmail.com</a></li>
           <li><a href="https://github.com/Ivorra-1996" target="_blank" rel="noreferrer">GitHub</a></li>
-          <li>
-            <a href="#" target="_blank" rel="noreferrer">Workana</a>
-            <small>[agregar enlace al perfil]</small>
-          </li>
           <li><a href="https://www.linkedin.com/in/josemariaivorra/" target="_blank" rel="noreferrer">LinkedIn</a></li>
         </ul>
       </div>

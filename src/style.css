@@ -224,10 +224,28 @@ h3 {
   padding-block: var(--space-2);
 }
 .logo {
+  display: inline-flex;
+  line-height: 0;
+}
+.logo__mark {
+  width: 36px;
+  height: 36px;
+}
+.logo__mark polygon {
+  fill: var(--color-bg);
+  stroke: var(--color-accent);
+  stroke-width: 4;
+  transition: stroke var(--transition);
+}
+.logo__mark text {
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
-  font-size: 1.25rem;
-  text-decoration: none;
+  font-size: 34px;
+  fill: var(--color-text);
+}
+.logo:hover .logo__mark polygon,
+.logo:focus-visible .logo__mark polygon {
+  stroke: var(--color-accent-strong);
 }
 
 .nav {
