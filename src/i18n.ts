@@ -294,6 +294,16 @@ export function initI18n(): void {
         opt.setAttribute('aria-selected', String(opt === option));
       });
       closeMenu();
+
+      // En mobile, elegir un idioma también cierra el menú hamburguesa
+      // entero (si no, el dropdown de idioma se cierra pero el panel de
+      // navegación se queda abierto tapando la página).
+      const navList = document.getElementById('navList');
+      const navToggle = document.getElementById('navToggle');
+      if (navList && navToggle) {
+        navList.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   });
 
