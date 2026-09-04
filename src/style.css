@@ -9,6 +9,11 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  /* Deja este espacio libre arriba en cualquier salto por ancla (nav, footer
+     "volver arriba") para que el header sticky (--header-height) no tape el
+     destino. Si cambia la altura real del header (logo, padding, etc.), este
+     valor hay que actualizarlo junto con eso. */
+  scroll-padding-top: var(--header-height);
 }
 
 body,
@@ -101,6 +106,11 @@ button {
   --container-max: 1180px;
   --container-narrow: 720px;
   --gutter: clamp(1.25rem, 4vw, 3rem);
+  /* Altura real medida del .site-header (sticky) — la usa scroll-padding-top
+     más abajo para que los saltos por ancla no queden tapados por el header.
+     Es la misma en mobile y desktop porque el contenido del header no cambia
+     de alto entre breakpoints. */
+  --header-height: 69px;
 
   --radius-sm: 2px;
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
