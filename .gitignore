@@ -14,3 +14,5 @@ Thumbs.db
 
 # env files (por si en algún momento se agrega un endpoint de contacto)
 .env*
+
+.vercel
