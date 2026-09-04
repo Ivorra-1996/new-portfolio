@@ -390,7 +390,7 @@ h3 {
    ============================================ */
 .hero {
   position: relative;
-  min-height: min(88vh, 480px);
+  min-height: min(88vh, 520px);
   display: flex;
   align-items: center;
 }
