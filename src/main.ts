@@ -1,5 +1,10 @@
 import './style.css';
 import { initMoltenMetal } from './moltenMetal';
+import { initI18n } from './i18n';
+
+// Selector de idioma ES/EN (dropdown en el header). Va primero para que el
+// idioma guardado se aplique antes de que se vea nada.
+initI18n();
 
 // Fondo animado de toda la página (shader MoltenMetal, reacciona al mouse).
 // Fijo detrás de todo el contenido entre el header y el footer (ambos opacos
